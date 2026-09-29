@@ -1,0 +1,5 @@
+phonenumber: "+491701234567"
+password: "replace-with-your-password"
+headless: false
+delay-minimum: 30
+delay-maximum: 90

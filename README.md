@@ -1,4 +1,4 @@
-# ALDI TALK Data Playwright Script#
+# ALDI TALK Data Playwright Script
 
 ## Welcome to my Aldi Talk Unlimited Script ##
 After trying out the current solutions i wasnt satisfied.

@@ -45,9 +45,12 @@ The browser then stays open and refreshes after a random delay between 30 and
 90 seconds. After each refresh it checks for both `Zahlung per Bankkonto` and
 `Dein Guthaben:` to determine that it is on the correct page. 
 If either marker is missing, it saves a full-page screenshot named `alditalk-unexpected-*.png` 
-in the project directory and closes the browser. 
+in the project directory, keeps only the latest one, and keeps refreshing. 
 If a refresh shows `Sitzung abgelaufen. Bitte melde dich erneut an.`, the script fills both login fields,
 submits the login form, waits five seconds, and resumes the refresh loop.
+Login, reload, and usage-meter failures are logged and retried in the same window.
+If a tab crashes or closes while the window is still open, the script opens a new tab in that same window.
+Close the browser window yourself to stop the script. With `headless: true`, stop it with Ctrl+C.
 
 Also during each refresh loop, the `svg.usage-meter__graph` attribute (`aria-valuenow` below 50) is checked. 
 If its value is below `3.5`, the visible circular action button is clicked, which provides you another 1GB.
